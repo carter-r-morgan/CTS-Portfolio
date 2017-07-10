@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
+  
   root to: 'pages#home'
 end
