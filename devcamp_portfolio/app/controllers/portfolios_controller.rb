@@ -1,28 +1,30 @@
 class PortfoliosController < ApplicationController
-    def index
-       @portfolio_items = Portfolio.all
-    end
+  layout 'portfolio'
+  
+  def index
+    @portfolio_items = Portfolio.all
+  end
     
-    def new
-        @portfolio_item = Portfolio.new
-        3.times { @portfolio_item.technologies.build }
-    end
+  def new
+    @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
+  end
     
-    def create
-        @portfolio_item = Portfolio.new(portfolio_params)
+  def create
+    @portfolio_item = Portfolio.new(portfolio_params)
 
-        respond_to do |format|
-        if @portfolio_item.save
+    respond_to do |format|
+      if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully created.' }
-        else
+      else
         format.html { render :new }
-        end
       end
     end
+  end
     
-    def edit
-        @portfolio_item = Portfolio.find(params[:id])
-    end
+  def edit
+    @portfolio_item = Portfolio.find(params[:id])
+  end
     
   def update
       @portfolio_item = Portfolio.find(params[:id])
@@ -59,4 +61,3 @@ class PortfoliosController < ApplicationController
                                       )
   end
 end
-# removal begins now
