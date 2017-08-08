@@ -15,9 +15,7 @@
 
   <body>
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
-
         <div class="cover-container">
           
           <%= video_tag(
@@ -35,6 +33,8 @@
           <%= yield %>
     
           <%= render "shared/application_footer" %>
+          
+          <%= render "shared/alerts" %>
     
           <%= source_helper("application") %>
         </div>
