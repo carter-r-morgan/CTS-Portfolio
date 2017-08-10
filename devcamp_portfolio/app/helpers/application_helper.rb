@@ -39,6 +39,10 @@ module ApplicationHelper
         url: portfolios_path,
         title: 'Portfolio'
       },
+      { 
+        url: about_path,
+        title: 'About'
+      }
     ]
   end
   
